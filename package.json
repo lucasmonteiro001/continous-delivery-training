@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "pm2 start index.js --name cd-lucas",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,6 +21,6 @@
     "express": "^4.15.4"
   },
   "devDependencies": {
-    "nodemon": "^1.12.0"
+    "pm2": "^2.6.1"
   }
 }
