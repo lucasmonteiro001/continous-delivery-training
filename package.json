@@ -13,12 +13,14 @@
   },
   "homepage": "",
   "dependencies": {
+    "express": "^4.15.4",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-scripts": "1.0.13"
   },
   "scripts": {
     "start": "react-scripts start",
+    "start:prod": "pm2 start  prod.js --name continuous-delivering-training",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
