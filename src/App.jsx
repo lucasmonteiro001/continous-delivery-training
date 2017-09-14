@@ -33,6 +33,7 @@ class App extends Component {
           return (
             <div key={index} style={{display: 'block'}}>
                {image}
+               
             </div>
           )
         })}
