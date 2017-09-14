@@ -18,7 +18,9 @@
     "react-scripts": "1.0.13"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "PORT=59999 react-scripts start",
+    "start:prod": "NODE_ENV=production node server",
+    "start:production": "yarn build && yarn start:prod",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
