@@ -4,3 +4,23 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
+name	/Users/lucas/Documents/continous-delivery-training/package.json	/^  "name": "continuous-delivering-training",$/;"	function	line:2
+version	/Users/lucas/Documents/continous-delivery-training/package.json	/^  "version": "0.1.0",$/;"	function	line:3
+private	/Users/lucas/Documents/continous-delivery-training/package.json	/^  "private": true,$/;"	function	line:4
+repository	/Users/lucas/Documents/continous-delivery-training/package.json	/^  "repository": {$/;"	function	line:5
+type	/Users/lucas/Documents/continous-delivery-training/package.json	/^    "type": "git",$/;"	function	line:6
+url	/Users/lucas/Documents/continous-delivery-training/package.json	/^    "url": "git+https:\/\/github.com\/lucasmonteiro001\/continous-delivery-training.git"$/;"	function	line:7
+author	/Users/lucas/Documents/continous-delivery-training/package.json	/^  "author": "Lucas Monteiro",$/;"	function	line:9
+license	/Users/lucas/Documents/continous-delivery-training/package.json	/^  "license": "MIT",$/;"	function	line:10
+bugs	/Users/lucas/Documents/continous-delivery-training/package.json	/^  "bugs": {$/;"	function	line:11
+url	/Users/lucas/Documents/continous-delivery-training/package.json	/^    "url": "https:\/\/github.com\/lucasmonteiro001\/continous-delivery-training\/issues"$/;"	function	line:12
+homepage	/Users/lucas/Documents/continous-delivery-training/package.json	/^  "homepage": "",$/;"	function	line:14
+dependencies	/Users/lucas/Documents/continous-delivery-training/package.json	/^  "dependencies": {$/;"	function	line:15
+react	/Users/lucas/Documents/continous-delivery-training/package.json	/^    "react": "^15.6.1",$/;"	function	line:16
+react-dom	/Users/lucas/Documents/continous-delivery-training/package.json	/^    "react-dom": "^15.6.1",$/;"	function	line:17
+react-scripts	/Users/lucas/Documents/continous-delivery-training/package.json	/^    "react-scripts": "1.0.13"$/;"	function	line:18
+scripts	/Users/lucas/Documents/continous-delivery-training/package.json	/^  "scripts": {$/;"	function	line:20
+start	/Users/lucas/Documents/continous-delivery-training/package.json	/^    "start": "react-scripts start",$/;"	function	line:21
+build	/Users/lucas/Documents/continous-delivery-training/package.json	/^    "build": "react-scripts build",$/;"	function	line:22
+test	/Users/lucas/Documents/continous-delivery-training/package.json	/^    "test": "react-scripts test --env=jsdom",$/;"	function	line:23
+eject	/Users/lucas/Documents/continous-delivery-training/package.json	/^    "eject": "react-scripts eject"$/;"	function	line:24

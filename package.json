@@ -11,7 +11,7 @@
   "bugs": {
     "url": "https://github.com/lucasmonteiro001/continous-delivery-training/issues"
   },
-  "homepage": "https://github.com/lucasmonteiro001/continous-delivery-training#readme",
+  "homepage": "",
   "dependencies": {
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
