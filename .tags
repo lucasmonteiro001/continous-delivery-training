@@ -16,9 +16,7 @@ react	/Users/lucas/Documents/continous-delivery-training/package.json	/^    "rea
 react-dom	/Users/lucas/Documents/continous-delivery-training/package.json	/^    "react-dom": "^15.6.1",$/;"	function	line:17
 react-scripts	/Users/lucas/Documents/continous-delivery-training/package.json	/^    "react-scripts": "1.0.13"$/;"	function	line:18
 scripts	/Users/lucas/Documents/continous-delivery-training/package.json	/^  "scripts": {$/;"	function	line:20
-start	/Users/lucas/Documents/continous-delivery-training/package.json	/^    "start": "PORT=59999 react-scripts start",$/;"	function	line:21
-start:prod	/Users/lucas/Documents/continous-delivery-training/package.json	/^    "start:prod": "NODE_ENV=production node server",$/;"	function	line:22
-start:production	/Users/lucas/Documents/continous-delivery-training/package.json	/^    "start:production": "yarn build && yarn start:prod",$/;"	function	line:23
-build	/Users/lucas/Documents/continous-delivery-training/package.json	/^    "build": "react-scripts build",$/;"	function	line:24
-test	/Users/lucas/Documents/continous-delivery-training/package.json	/^    "test": "react-scripts test --env=jsdom",$/;"	function	line:25
-eject	/Users/lucas/Documents/continous-delivery-training/package.json	/^    "eject": "react-scripts eject"$/;"	function	line:26
+start	/Users/lucas/Documents/continous-delivery-training/package.json	/^    "start": "react-scripts start",$/;"	function	line:21
+build	/Users/lucas/Documents/continous-delivery-training/package.json	/^    "build": "react-scripts build",$/;"	function	line:22
+test	/Users/lucas/Documents/continous-delivery-training/package.json	/^    "test": "react-scripts test --env=jsdom",$/;"	function	line:23
+eject	/Users/lucas/Documents/continous-delivery-training/package.json	/^    "eject": "react-scripts eject"$/;"	function	line:24
