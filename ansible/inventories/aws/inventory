@@ -1,2 +1,6 @@
-[all]
-127.0.0.1
+[aws]
+ec2-13-59-84-172.us-east-2.compute.amazonaws.com
+
+[aws:vars]
+ansible_ssh_user=lmonteir
+ansible_ssh_private_key_file=~/.ssh/id_rsa
