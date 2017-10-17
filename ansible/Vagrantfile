@@ -17,7 +17,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	# Ansible provisioner.
 	config.vm.provision :ansible do |ansible|
 		ansible.playbook = "playbook.yml"
-		ansible.become = true
+		# ansible.become = true
 		ansible.inventory_path = "inventories/vagrant/inventory"
 		ansible.limit = "all"
 		ansible.galaxy_role_file = "requirements.yml"

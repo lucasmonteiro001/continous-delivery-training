@@ -3,7 +3,7 @@
 
   vars:
     - app_path: /home/{{ ansible_ssh_user }}/continous-delivery-training/
-    - npm_global_packages: ["pm2", "create-react-app"]
+    - npm_global_packages: ["pm2"]
     - nodejs_version: "6.x"
 
   pre_tasks:
