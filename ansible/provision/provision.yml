@@ -4,6 +4,7 @@
 
   vars:
     - app_path: /home/vagrant/continous-delivery-training/
+    - npm_global_packages: ["pm2", "create-react-app"]
     - nodejs_version: "6.x"
 
   pre_tasks:
@@ -17,19 +18,22 @@
   tasks:
     - git:  repo=https://github.com/lucasmonteiro001/continous-delivery-training.git
             dest={{ app_path }}
+
+    - name: Install global node.js packages globally.
+      npm:
+        name: "{{ item }}"
+        global: yes
+      with_items: "{{ npm_global_packages }}"
     
     - name: Install packages from package.json
-      npm: path={{ app_path }}
+      command: >
+        npm install
+        chdir={{ app_path }}
 
     - name: Build application
       command: >
         npm run build
         chdir={{ app_path }}
-
-    - name: Install "pm2" node.js package globally.
-      npm:
-        name: pm2
-        global: yes
 
     - name: Start application 
       command: >
