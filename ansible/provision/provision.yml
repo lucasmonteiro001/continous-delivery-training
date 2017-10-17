@@ -1,8 +1,7 @@
 ---
 - hosts: all
   become: true
-  gather_facts: false
-
+  
   vars:
     - app_path: /home/{{ ansible_ssh_user }}/continous-delivery-training/
     - npm_global_packages: ["pm2", "create-react-app"]
