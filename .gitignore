@@ -1,4 +1,5 @@
 .vagrant
+playbook.retry 
 
 # Logs
 logs

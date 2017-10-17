@@ -1,7 +1,6 @@
 ---
 - hosts: all
-  become: true
-  
+
   vars:
     - app_path: /home/{{ ansible_ssh_user }}/continous-delivery-training/
     - npm_global_packages: ["pm2", "create-react-app"]
@@ -16,10 +15,6 @@
     - geerlingguy.nodejs
 
   tasks:
-    # - name: test
-    #   command: >
-    #     pwd
-    #     chdir={{ app_path }}
     - git:  repo=https://github.com/lucasmonteiro001/continous-delivery-training.git
             dest={{ app_path }}
 
