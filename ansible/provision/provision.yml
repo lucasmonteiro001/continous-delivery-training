@@ -1,40 +1,39 @@
 ---
 - hosts: all
-
-  vars:
-    - app_path: /home/{{ ansible_ssh_user }}/continous-delivery-training/
-    - npm_global_packages: ["pm2"]
-    - nodejs_version: "6.x"
+  become: yes
 
   pre_tasks:
     - name: Update apt cache if needed.
+      become: yes
       apt: update_cache=yes cache_valid_time=3600
 
+  vars:
+    - app_path: /home/{{ ansible_ssh_user }}/continous-delivery-training/
+    - nodejs_npm_global_packages: ["pm2"]
+    - nodejs_version: "6.x"
+
   roles:
-    - geerlingguy.git
     - geerlingguy.nodejs
 
   tasks:
-    - git:  repo=https://github.com/lucasmonteiro001/continous-delivery-training.git
-            dest={{ app_path }}
+    - apt_repository:
+        repo: 'ppa:fkrull/deadsnakes'
 
-    - name: Install global node.js packages globally.
-      npm:
-        name: "{{ item }}"
-        global: yes
-      with_items: "{{ npm_global_packages }}"
-    
-    - name: Install packages from package.json
-      command: >
-        npm install
-        chdir={{ app_path }}
+    - name: Install python3.6
+      apt: name=python3.6 state=present
 
-    - name: Build application
-      command: >
-        npm run build
-        chdir={{ app_path }}
+
+
+- hosts: all
+  vars:
+    - app_path: /home/{{ ansible_ssh_user }}/continous-delivery-training/
+
+  tasks:
+    - name: Copy build files to remote
+      copy:
+        src: ../../build/
+        dest: "{{ app_path }}"
 
     - name: Start application 
-      command: >
-        npm run start:prod
-        chdir={{ app_path }}
+      raw: "cd {{ app_path }} && /usr/local/lib/npm/bin/pm2 start /usr/bin/python3.6 -- -m http.server 59999"
+      
