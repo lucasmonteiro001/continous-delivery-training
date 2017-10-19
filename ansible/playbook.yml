@@ -1,3 +1,3 @@
 ---
-- include: provision/provision.yml
-# - include: deploy.yml
+- include: provision/main.yml
+- include: deploy/main.yml
