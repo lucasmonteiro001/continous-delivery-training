@@ -16,24 +16,12 @@
     - geerlingguy.nodejs
 
   tasks:
-    - apt_repository:
+    - name: Add python3.6 apt_repo
+      become: yes
+      apt_repository:
         repo: 'ppa:fkrull/deadsnakes'
 
     - name: Install python3.6
+      become: yes
       apt: name=python3.6 state=present
-
-
-
-- hosts: all
-  vars:
-    - app_path: /home/{{ ansible_ssh_user }}/continous-delivery-training/
-
-  tasks:
-    - name: Copy build files to remote
-      copy:
-        src: ../../build/
-        dest: "{{ app_path }}"
-
-    - name: Start application 
-      raw: "cd {{ app_path }} && /usr/local/lib/npm/bin/pm2 start /usr/bin/python3.6 -- -m http.server 59999"
       

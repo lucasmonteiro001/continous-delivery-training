@@ -1,0 +1,18 @@
+---
+- hosts: all
+  vars:
+    - app_path: /home/{{ ansible_ssh_user }}/continous-delivery-training/
+    - pm2_exec: /usr/local/lib/npm/bin/pm2
+    - python_exec: /usr/bin/python3.6
+
+  tasks:
+    - name: Copy build files to remote
+      copy:
+        src: ../../build/
+        dest: "{{ app_path }}"
+
+    - name: Remove all pm2 applications
+      raw: "{{ pm2_exec }} delete all || true"
+
+    - name: Start application 
+      raw: "cd {{ app_path }} && {{ pm2_exec }} start {{ python_exec }} -- -m http.server 59999"
