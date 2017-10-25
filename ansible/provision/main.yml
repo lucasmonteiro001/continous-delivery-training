@@ -9,12 +9,7 @@
 
   vars:
     - app_path: /home/{{ ansible_ssh_user }}/continous-delivery-training/
-    - nodejs_npm_global_packages: ["pm2"]
-    - nodejs_version: "6.x"
-
-  roles:
-    - geerlingguy.nodejs
-
+    
   tasks:
     - name: Add python3.6 apt_repo
       become: yes

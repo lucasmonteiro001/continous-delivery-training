@@ -1,0 +1,14 @@
+[Unit]
+    Description=Run Iphone 8 python app
+
+    [Service]
+    ExecStart={{ app_path }}startup
+    ReadWriteDirectories={{ app_path }} 
+    WorkingDirectory={{ app_path }}
+    Restart=always
+    RestartSec=10                                          
+    SyslogIdentifier=downcount_service
+    User={{ ansible_ssh_user }}
+
+    [Install]
+    WantedBy=multi-user.target
