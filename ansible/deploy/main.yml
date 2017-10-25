@@ -28,4 +28,5 @@
     - service:
         name: "{{ service_name }}"
         state: started
+        enabled: true
       become: true
