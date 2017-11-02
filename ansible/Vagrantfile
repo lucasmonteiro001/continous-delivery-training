@@ -19,15 +19,15 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	config.vm.define "maonamassa" do |v|
 		v.vm.hostname = "maonamassa.dev"
 		v.vm.network :private_network, ip: "192.168.55.56"
-		v.vm.provider :virtualbox do |v|
-			v.customize ["modifyvm", :id, "--memory", 1024]
-		end
 	end
 
 	# Jenkins - pipeline
 	config.vm.define "jenkins" do |v|
 		v.vm.hostname = "jenkins.dev"
 		v.vm.network :private_network, ip: "192.168.55.100"
+		v.vm.provider :virtualbox do |v|
+			v.customize ["modifyvm", :id, "--memory", 1512]
+		end
 
 		# Ansible provisioner.
 		config.vm.provision :ansible do |ansible|
