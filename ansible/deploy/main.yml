@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: maonamassa
   vars:
     - app_path: /home/{{ ansible_ssh_user }}/continous-delivery-training/
     - pm2_exec: /usr/local/lib/npm/bin/pm2
