@@ -1,0 +1,20 @@
+---
+- hosts: maonamassa
+  pre_tasks:
+    - name: Update apt cache if needed.
+      become: yes
+      apt: update_cache=yes cache_valid_time=3600
+
+  vars:
+    - app_path: /home/{{ ansible_ssh_user }}/continous-delivery-training/
+    
+  tasks:
+    - name: Add python3.6 apt_repo
+      become: yes
+      apt_repository:
+        repo: 'ppa:fkrull/deadsnakes'
+
+    - name: Install python3.6
+      become: yes
+      apt: name=python3.6 state=present
+      
