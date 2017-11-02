@@ -4,22 +4,43 @@
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-    config.vm.box = "bento/ubuntu-16.04"
-	config.vm.network :private_network, ip: "192.168.55.56"
-	config.vm.hostname = "maonamassa.dev"	
+	# Base VM OS configuration.
+	config.vm.box = "bento/ubuntu-16.04"
 	config.ssh.insert_key = false
-  	config.vm.synced_folder ".", "/vagrant", disabled: true
+	config.vm.synced_folder ".", "/vagrant", disabled: true
 
+	# General VirtualBox VM configuration.
 	config.vm.provider :virtualbox do |v|
-		v.memory = 2048
+		v.memory = 512
+		v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+	end
+
+	# maonamassa
+	config.vm.define "maonamassa" do |v|
+		v.vm.hostname = "maonamassa.dev"
+		v.vm.network :private_network, ip: "192.168.55.56"
+		v.vm.provider :virtualbox do |v|
+			v.customize ["modifyvm", :id, "--memory", 1024]
+		end
+	end
+
+	# Jenkins - pipeline
+	config.vm.define "jenkins" do |v|
+		v.vm.hostname = "jenkins.dev"
+		v.vm.network :private_network, ip: "192.168.55.100"
 	end
 
 	# Ansible provisioner.
 	config.vm.provision :ansible do |ansible|
-		ansible.playbook = "playbook.yml"
 		# ansible.become = true
+		ansible.playbook = "playbook.yml"
 		ansible.inventory_path = "inventories/vagrant/inventory"
 		ansible.limit = "all"
 		ansible.galaxy_role_file = "requirements.yml"
+		ansible.extra_vars = {
+			ansible_ssh_user: 'vagrant',
+			ansible_ssh_private_key_file: "~/.vagrant.d/insecure_private_key"
+		  }
 	end
+
 end
