@@ -3,9 +3,13 @@
   vars:
     - jenkins_hostname: jenkins.dev
     - jenkins_http_port: 8080
+    - nodejs_npm_global_packages: ['yarn']
+    - nodejs_install_npm_user: "jenkins"
 
   roles:
     - role: geerlingguy.java
       become: true
     - role: geerlingguy.jenkins
+      become: true
+    - role: geerlingguy.nodejs
       become: true
